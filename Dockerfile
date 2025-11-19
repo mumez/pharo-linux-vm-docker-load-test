@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
     libx11-6 \
     libgl1 \
     libasound2t64 \
+    libaudio2 \
+    libssl3 \
+    libgit2-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
