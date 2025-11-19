@@ -1,0 +1,10 @@
+# Environments
+.env
+.envrc
+.venv
+
+# Claude
+.claude
+
+# internal plan
+plan.md
