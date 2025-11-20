@@ -28,9 +28,9 @@ echo "Starting Pharo VM..."
 PHARO_PID=$!
 echo "Pharo VM started (PID: $PHARO_PID)"
 
-# Wait for 5 seconds to let the process run
-echo "Waiting 5 seconds for load generation..."
-sleep 5
+# Wait for 15 seconds to let the process run
+echo "Waiting 15 seconds for load generation..."
+sleep 15
 
 # Capture top output
 echo ""

@@ -25,8 +25,11 @@ COPY run.st .
 # Make scripts executable
 RUN chmod +x scripts/*.sh
 
+# Accept build argument for VM URL
+ARG VM_URL="https://files.pharo.org/vm/pharo-spur64/Linux-x86_64/PharoVM-10.0.9-79fe4f3-Linux-x86_64-stockReplacement-bin.zip"
+
 # Set environment variable for VM URL (can be overridden)
-ENV VM_URL="https://files.pharo.org/vm/pharo-spur64/Linux-x86_64/PharoVM-10.0.9-79fe4f3-Linux-x86_64-stockReplacement-bin.zip"
+ENV VM_URL="${VM_URL}"
 
 # Run setup script to download and extract VM and image
 RUN cd scripts && ./setup.sh
