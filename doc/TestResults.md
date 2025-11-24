@@ -17,7 +17,7 @@ The test creates a TCP socket connection, sends data, and then destroys the clie
 | VM Version | Status  | CPU Usage | Notes                   |
 | ---------- | ------- | --------- | ----------------------- |
 | 10.0.9     | ✅ PASS | < 90%     | Normal CPU usage        |
-| 10.3.8     | ❌ FAIL | 90.9%     | High CPU usage detected |
+| 10.3.9     | ❌ FAIL | 100%     | High CPU usage detected |
 
 ---
 
@@ -49,29 +49,29 @@ Tasks:   4 total,   1 running,   3 sleeping,   0 stopped,   0 zombie
 
 ---
 
-### VM 10.3.8 - FAIL ❌
+### VM 10.3.9 - FAIL ❌
 
-**VM URL**: `https://files.pharo.org/vm/pharo-spur64/Linux-x86_64/PharoVM-v10.3.8%2B11.9f8b2b0-Linux-x86_64-stockReplacement-bin.zip`
+**VM URL**: `https://files.pharo.org/vm/pharo-spur64/Linux-x86_64/PharoVM-v10.3.9%2B0.33e04bb-Linux-x86_64-stockReplacement-bin.zip`
 
 **Test Execution**:
 
 ```
-Starting test: 2025-11-20T13:21:42.547888+00:00
-Test completed: 2025-11-20T13:21:44.057911+00:00
+Starting test:2025-11-24T14:33:14.197172+00:00
+Test completed: 2025-11-24T14:33:15.723274+00:00
 ```
 
 **CPU Usage**:
 
 ```
-top - 13:21:57 up  1:59,  0 user,  load average: 0.33, 0.14, 0.10
+top - 14:33:29 up  2:40,  0 user,  load average: 0.25, 0.17, 0.07
 Tasks:   4 total,   2 running,   2 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  0.0 us,  8.1 sy,  0.0 ni, 91.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+%Cpu(s):  0.0 us,  8.7 sy,  0.0 ni, 90.5 id,  0.0 wa,  0.0 hi,  0.8 si,  0.0 st 
 
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-   14 root      20   0  174892  85632  11008 R  90.9   0.5   0:13.78 pharo
+   14 root      20   0  174892  85760  11008 R 100.0   0.5   0:13.77 pharo
 ```
 
-**Result**: FAIL - Pharo process consuming 90.9% CPU, indicating the issue is present.
+**Result**: FAIL - Pharo process consuming 100.0% CPU, indicating the issue is present.
 
 ---
 
@@ -80,9 +80,9 @@ Tasks:   4 total,   2 running,   2 sleeping,   0 stopped,   0 zombie
 The test successfully reproduces the issue reported in [pharo-project/pharo-vm#1018](https://github.com/pharo-project/pharo-vm/issues/1018):
 
 - **VM 10.0.9**: Works correctly with normal CPU usage
-- **VM 10.3.8**: Exhibits high CPU usage (90.9%) after socket operations
+- **VM 10.3.9**: Exhibits high CPU usage (90.9%) after socket operations
 
-This confirms that the regression was introduced between VM versions 10.0.9 and 10.3.8.
+This confirms that the regression was introduced between VM versions 10.0.9 and 10.3.9.
 
 ## Test Script
 
@@ -126,10 +126,10 @@ To reproduce these test results on your own machine, follow these steps:
    ./run-with-10.0.9.sh
    ```
 
-   For VM 10.3.8 (expected to fail with high CPU):
+   For VM 10.3.9 (expected to fail with high CPU):
 
    ```bash
-   ./run-with-10.3.8.sh
+   ./run-with-10.3.9.sh
    ```
 
 3. **Observe the results**:

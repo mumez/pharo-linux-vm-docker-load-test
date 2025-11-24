@@ -12,7 +12,7 @@ This repository provides a containerized environment to test Pharo VM performanc
 pharo-linux-vm-docker-test/
 ├── Dockerfile           # Ubuntu noble-based container definition
 ├── run-with-10.0.9.sh   # Convenience script for VM 10.0.9
-├── run-with-10.3.8.sh   # Convenience script for VM 10.3.8
+├── run-with-10.3.9.sh   # Convenience script for VM 10.3.9
 ├── scripts/
 │   ├── setup.sh        # Downloads and extracts VM and Pharo image
 │   ├── pharo.sh        # Pharo launcher script for headless execution
@@ -31,8 +31,8 @@ Run tests with specific VM versions using the provided scripts:
 # Test with VM 10.0.9
 ./run-with-10.0.9.sh
 
-# Test with VM 10.3.8
-./run-with-10.3.8.sh
+# Test with VM 10.3.9
+./run-with-10.3.9.sh
 ```
 
 These scripts automatically build the Docker image with the correct VM version and run the test.
@@ -66,11 +66,11 @@ docker build --build-arg VM_URL="$VM_URL" -t pharo-vm-test:10.0.9 .
 docker run --rm pharo-vm-test:10.0.9
 ```
 
-### Example-2 : 10.3.8
+### Example-2 : 10.3.9
 ```bash
-VM_URL=https://files.pharo.org/vm/pharo-spur64/Linux-x86_64/PharoVM-v10.3.8%2B11.9f8b2b0-Linux-x86_64-stockReplacement-bin.zip
-docker build --build-arg VM_URL="$VM_URL" -t pharo-vm-test:10.3.8 .
-docker run --rm pharo-vm-test:10.3.8
+VM_URL=https://files.pharo.org/vm/pharo-spur64/Linux-x86_64/PharoVM-v10.3.9%2B0.33e04bb-Linux-x86_64-stockReplacement-bin.zip
+docker build --build-arg VM_URL="$VM_URL" -t pharo-vm-test:10.3.9 .
+docker run --rm pharo-vm-test:10.3.9
 ```
 
 Or override it at runtime:
