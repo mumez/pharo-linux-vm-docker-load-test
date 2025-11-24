@@ -114,7 +114,7 @@ To reproduce these test results on your own machine, follow these steps:
 1. **Clone or download this repository**:
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mumez/pharo-linux-vm-docker-load-test.git
    cd pharo-linux-vm-docker-load-test
    ```
 
