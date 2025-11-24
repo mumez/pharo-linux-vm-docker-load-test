@@ -80,7 +80,7 @@ Tasks:   4 total,   2 running,   2 sleeping,   0 stopped,   0 zombie
 The test successfully reproduces the issue reported in [pharo-project/pharo-vm#1018](https://github.com/pharo-project/pharo-vm/issues/1018):
 
 - **VM 10.0.9**: Works correctly with normal CPU usage
-- **VM 10.3.9**: Exhibits high CPU usage (90.9%) after socket operations
+- **VM 10.3.9**: Exhibits high CPU usage (100%) after socket operations
 
 This confirms that the regression was introduced between VM versions 10.0.9 and 10.3.9.
 
